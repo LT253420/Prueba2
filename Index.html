@@ -2,18 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba Rápida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Demo Correcto / Incorrecto</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <button onclick="mostrar()">Click acá</button>
-  <div id="resultado"></div>
+  <div class="button-container">
+    <button class="main-button" onclick="toggleSubButtons(this)">
+      Pregunta Principal
+      <div class="sub-buttons">
+        <button class="sub-button correct">Respuesta Correcta</button>
+        <button class="sub-button incorrect">Respuesta Incorrecta</button>
+      </div>
+    </button>
+  </div>
 
-  <script>
-    function mostrar() {
-      document.getElementById('resultado').innerHTML = '<p>¡Funciona!</p>';
-    }
-  </script>
+<script>
+function toggleSubButtons(button) {
+  const subButtons = button.querySelector('.sub-buttons');
+  if (subButtons.style.display === "block") {
+    subButtons.style.display = "none";
+  } else {
+    subButtons.style.display = "block";
+  }
+}
+</script>
 
 </body>
 </html>
